@@ -1,0 +1,27 @@
+/** @format */
+
+@import "../global/utils.less";
+
+  .wrapper-login {
+    padding-top: 4em;
+    //max-width: 480px;
+    text-align: center;
+
+    @media screen and (min-width: 40em) {
+      margin: 0 auto;
+      max-width: 480px;
+      width: 80%;
+    }
+
+    .title-login {
+      .font-l1;
+      .type-light;
+      color: @color-ancillary;
+      margin-bottom: 0.75rem;
+    }
+
+    .subtitle-login {
+      color: @color-medium-well;
+      margin: 0 15% 3rem;
+    }
+  }

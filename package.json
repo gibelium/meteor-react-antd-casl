@@ -1,0 +1,67 @@
+{
+  "name": "meteor-react-antd-casl",
+  "scripts": {
+    "start": "meteor",
+    "pretest": "npm run lint --silent",
+    "lint": "eslint --ext .js,.jsx ."
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.1.5",
+    "@casl/ability": "2.3.0",
+    "@casl/react": "0.7.0",
+    "antd": "^3.15.1",
+    "bcrypt": "^3.0.0",
+    "classnames": "^2.2.6",
+    "create-react-class": "^15.6.3",
+    "featherlight": "^1.7.13",
+    "immutable": "^3.7.4",
+    "indexof": "^0.0.1",
+    "meteor-babel": "^7.1.3",
+    "meteor-node-stubs": "^0.4.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-addons-pure-render-mixin": "^15.6.2",
+    "react-color": "^2.14.1",
+    "react-dom": "^16.4.2",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-transition-group": "^2.4.0",
+    "scheduler": "^0.8.1",
+    "throttle-debounce": "^2.1.0",
+    "tracer": "^0.9.6",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-import": "^1.8.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "eslint": "^5.14.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-import-resolver-babel-module": "^5.0.1",
+    "eslint-import-resolver-meteor": "^0.4.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-const-case": "^1.0.4",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-meteor": "^5.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "lint-staged": "^8.1.0",
+    "madge": "^3.4.4",
+    "prettier": "^1.16.4"
+  },
+  "peerDependencies": {},
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          "last 2 versions"
+        ]
+      }
+    }
+  }
+}

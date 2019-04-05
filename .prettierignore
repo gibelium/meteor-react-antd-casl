@@ -1,0 +1,6 @@
+.idea/
+.meteor/
+node_modules/
+depcheck.json
+package.json
+yarn.lock
