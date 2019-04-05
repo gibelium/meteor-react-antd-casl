@@ -1,10 +1,10 @@
 This is a small showcase for the usage of [CASL authorization library](https://github.com/stalniy/casl) in a meteor/react environment using the ant-design UI library. It demonstrates storing the abilities for each user in the mongoDB users collection and loading them when a user logs in into the app.
 
 #### Test users
-Within the ContentComponent.jsx the content is then rendered based on the abilities of each user. There are three users defined:
-*  user: admin@demo.ger / password: admin
-*  user: manager@demo.ger / password: manager
-*  user: user@demo.ger / password: user
+Within the ContentComponent.jsx the content is then rendered based on the abilities of each user. There are three test users defined:
+*  admin@demo.ger/admin
+*  manager@demo.ger/manager
+*  user@demo.ger/user
 
 #### Implementation details
 1) The setup of the users, their abilities and storing those information is done in /server/main.js by using the basic meteor/Accounts functionality.
