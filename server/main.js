@@ -105,7 +105,6 @@ if (Meteor.isServer) {
     user.createdOn = new Date();
 
     // Resolve and store abilities for user during creation
-    // FIXME: abilities are not stored in mongo collection
     user.abilities = Abilities.getAbilitiesForUser(user).rules;
 
     // We still want the default hook's 'profile' behavior.
