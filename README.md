@@ -24,6 +24,6 @@ There is one issue left in the showcase documented in the [casl/react issue trac
 
 #### To run the showcase
 1) Checkout the git branch
-2) Run either _npm install_ or _yarn_ to download and setup the npm_packages
-3) Execute the application from terminal/console with _meteor_
-    *  If you want to reset the meteor application and the stored data execute _meteor reset_ from terminal/console 
+2) Run either **_npm install_** or **_yarn_** to download and setup the npm_packages
+3) Execute the application from terminal/console with **_meteor_**
+    *  If you want to reset the meteor application and the stored data execute **_meteor reset_** from terminal/console 
