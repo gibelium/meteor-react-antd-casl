@@ -2,9 +2,9 @@ This is a small showcase for the usage of [CASL authorization library](https://g
 
 #### Test users
 Within the ContentComponent.jsx the content is then rendered based on the abilities of each user. There are three test users defined:
-*  admin@demo.ger/admin
-*  manager@demo.ger/manager
-*  user@demo.ger/user
+*  admin@demo.ger / admin
+*  manager@demo.ger / manager
+*  user@demo.ger / user
 
 #### Implementation details
 1) The setup of the users, their abilities and storing those information is done in /server/main.js by using the basic meteor/Accounts functionality.
