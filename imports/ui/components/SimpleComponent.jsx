@@ -1,6 +1,6 @@
 /** @format */
 
-import '../styles/components/ContentComponent.less';
+import '../../ui/styles/components/SimpleComponent.less';
 
 import React, { Component } from 'react';
 import { Layout } from 'antd/lib/index';
@@ -8,7 +8,7 @@ import { Can } from '../../casl/AbilityContext';
 // import { AbilityContext } from '../../casl/AbilityContext';
 // import { createContextualCan } from '@casl/react';
 
-class ContentComponent extends Component {
+class SimpleComponent extends Component {
   constructor(props) {
     super(props);
   }
@@ -21,7 +21,7 @@ class ContentComponent extends Component {
       <Layout className="casl-content-layout">
         <Layout.Content className="casl-content-main-area">
           <Can I="access" this="admin-content">
-            <div id="admin-content">
+            <div id="admin-content" className="content-part">
               <h1>Admin Content</h1>
               <ul>
                 <li onDoubleClick={this.edit}>Admin Test Content 01</li>
@@ -31,7 +31,7 @@ class ContentComponent extends Component {
           </Can>
 
           <Can I="access" this="manager-content">
-            <div id="manager-content">
+            <div id="manager-content" className="content-part">
               <h1>Manager Content</h1>
               <ul>
                 <li>Manager Test Content 01</li>
@@ -40,7 +40,7 @@ class ContentComponent extends Component {
             </div>
           </Can>
 
-          <div id="user-content">
+          <div id="user-content" className="content-part">
             <h1>User Content</h1>
             <ul>
               <li>User Test Content 01</li>
@@ -53,4 +53,4 @@ class ContentComponent extends Component {
   }
 }
 
-export { ContentComponent };
+export { SimpleComponent };

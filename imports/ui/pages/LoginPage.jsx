@@ -15,7 +15,6 @@ class LoginPage extends Component {
     return (
       <div className="wrapper-login">
         <h1 className="title-login">Login</h1>
-        <p />
         <WrappedLoginForm history={this.props.history} />
       </div>
     );

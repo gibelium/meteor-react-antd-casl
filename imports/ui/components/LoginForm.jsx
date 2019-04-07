@@ -1,5 +1,7 @@
 /** @format */
 
+import '../../ui/styles/components/LoginForm.less';
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';

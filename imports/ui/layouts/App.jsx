@@ -8,7 +8,9 @@ import { Meteor } from 'meteor/meteor';
 import { Layout, Menu } from 'antd/lib/index';
 import { LoginPage } from '../pages/LoginPage.jsx';
 import { NotFoundPage } from '../pages/NotFoundPage.jsx';
-import { ContentComponent } from '../components/ContentComponent.jsx';
+import { MenuComponent } from '../components/MenuComponent.jsx';
+import { RootComponent } from '../components/RootComponent.jsx';
+import { SimpleComponent } from '../components/SimpleComponent.jsx';
 import { AbilityContext } from '../../casl/AbilityContext';
 
 import { Ability } from '@casl/ability';
@@ -83,6 +85,9 @@ class App extends Component {
         }}>
         <Layout.Header className="app-header">
           <Menu theme="dark" onClick={this.handleMenuOnClick} selectedKeys={[location.pathname]} mode="horizontal">
+            <Menu.Item key="home">
+              <Link to="/">Home</Link>
+            </Menu.Item>
             {Meteor.user() == null ? (
               <Menu.Item key="login">
                 <Link to="/login">Login</Link>
@@ -99,7 +104,9 @@ class App extends Component {
             margin: '0',
           }}>
           <Switch>
-            <Route exact path="/" component={ContentComponent} />
+            <Route exact path="/" component={RootComponent} />
+            <Route exact path="/simple" component={SimpleComponent} />
+            <Route exact path="/menu" component={MenuComponent} />
             <Route exact path="/login" component={LoginPage} />
             <Route component={NotFoundPage} />
           </Switch>
