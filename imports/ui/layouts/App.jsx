@@ -34,6 +34,7 @@ class App extends Component {
       newState.currentUser = props.currentUser;
       newState.abilities = new Ability(props.currentUser.abilities);
     }
+    newState.abilities.update();
     return newState;
   }
 
