@@ -105,7 +105,7 @@ if (Meteor.isServer) {
     user.createdOn = new Date();
 
     // Resolve and store abilities for user during creation
-    user.abilities = Abilities.getAbilitiesForUser(user).rules;
+    user.abilities = Abilities.getAbilitiesForUser(user);
 
     // We still want the default hook's 'profile' behavior.
     if (options.profile) {

@@ -18,24 +18,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: null,
-      abilities: null,
+      abilities: this.createAbility(),
     };
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    let newState = {
-      abilities: state.abilities,
-    };
-    if (props.currentUser === state.currentUser && state.abilities === null) {
-      newState.currentUser = state.currentUser;
-      newState.abilities = new Ability();
-    } else if (props.currentUser !== state.currentUser && props.currentUser !== null) {
-      newState.currentUser = props.currentUser;
-      newState.abilities = new Ability(props.currentUser.abilities);
-    }
-    newState.abilities.update();
-    return newState;
   }
 
   renderRedirect(location) {
@@ -63,6 +47,28 @@ class App extends Component {
       Meteor.logout();
     }
   };
+
+  updateAbilities() {
+    const { currentUser } = this.props
+
+    if (currentUser) {
+      this.state.abilities.update(currentUser.abilities)
+    }
+  }
+
+  createAbility() {
+    const { currentUser } = this.props
+
+    return new Ability(currentUser ? currentUser.abilities : [])
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.currentUser !== prevProps.currentUser) {
+      this.setState({ abilities: this.createAbility() })
+      // or you can reuse existing `Ability` instance
+      // this.updateAbilities()
+    }
+  }
 
   renderContent(location) {
     return (
