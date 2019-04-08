@@ -5,7 +5,7 @@ import { UserRoles } from './UserRoles';
 
 class Abilities {
   static getAbilitiesForUser(user) {
-    const { can, rules } = AbilityBuilder.extract()
+    const { can, rules } = AbilityBuilder.extract();
 
     if (user.roles.includes(UserRoles.ROLE_ADMIN)) {
       can('access', 'admin-content');
@@ -16,7 +16,7 @@ class Abilities {
       // yet no permissions
     }
 
-    return rules
+    return rules;
   }
 }
 

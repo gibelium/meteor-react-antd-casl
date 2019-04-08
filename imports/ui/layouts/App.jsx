@@ -18,9 +18,47 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      abilities: this.createAbility(),
+      abilities: this._createAbility(), // Create empty CASL abilities
     };
   }
+
+  // ##### Lifecycle #####
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props.currentUser !== prevProps.currentUser) {
+      // this.setState({ abilities: this.createAbility() }); // Set new CASL `Ability instance
+      this._updateAbilities(); // Reuse and update existing ``ASL `Ability` instance
+    }
+  }
+
+  // ##### CASL ability handling #####
+
+  _createAbility() {
+    const { currentUser } = this.props;
+    return new Ability(currentUser ? currentUser.abilities : []);
+  }
+
+  _updateAbilities() {
+    const { currentUser } = this.props;
+    if (currentUser) {
+      this.state.abilities.update(currentUser.abilities);
+    }
+  }
+
+  // ##### User interactions #####
+
+  // noinspection JSUnusedLocalSymbols
+  handleMenuOnClick = e => {
+    // currently there is nothing to do here
+  };
+
+  handleLogout = e => {
+    if (e.key === 'logout') {
+      Meteor.logout();
+    }
+  };
+
+  // ##### Rendering #####
 
   renderRedirect(location) {
     const { redirectTo } = this.state;
@@ -37,39 +75,6 @@ class App extends Component {
     return redirect;
   }
 
-  // noinspection JSUnusedLocalSymbols
-  _handleMenuItemClick = e => {
-    // currently there is nothing to do here
-  };
-
-  _logoutUser = e => {
-    if (e.key === 'logout') {
-      Meteor.logout();
-    }
-  };
-
-  updateAbilities() {
-    const { currentUser } = this.props
-
-    if (currentUser) {
-      this.state.abilities.update(currentUser.abilities)
-    }
-  }
-
-  createAbility() {
-    const { currentUser } = this.props
-
-    return new Ability(currentUser ? currentUser.abilities : [])
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.currentUser !== prevProps.currentUser) {
-      this.setState({ abilities: this.createAbility() })
-      // or you can reuse existing `Ability` instance
-      // this.updateAbilities()
-    }
-  }
-
   renderContent(location) {
     return (
       <Layout
@@ -77,13 +82,13 @@ class App extends Component {
           height: '100vh',
         }}>
         <Layout.Header className="app-header">
-          <Menu theme="dark" onClick={this._handleMenuItemClick} selectedKeys={[location.pathname]} mode="horizontal">
+          <Menu theme="dark" onClick={this.handleMenuOnClick} selectedKeys={[location.pathname]} mode="horizontal">
             {Meteor.user() == null ? (
               <Menu.Item key="login">
                 <Link to="/login">Login</Link>
               </Menu.Item>
             ) : (
-              <Menu.Item key="logout" onClick={this._logoutUser}>
+              <Menu.Item key="logout" onClick={this.handleLogout}>
                 Logout
               </Menu.Item>
             )}
