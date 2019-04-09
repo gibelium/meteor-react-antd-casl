@@ -1,4 +1,4 @@
-This is a small showcase for the usage of [CASL authorization library](https://github.com/stalniy/casl) in a meteor/react environment using the ant-design UI library. It demonstrates storing the abilities for each user in the mongoDB users collection and loading them when a user logs in into the app.
+This is a showcase for the usage of [CASL authorization library](https://github.com/stalniy/casl) in a meteor/react environment using the ant-design UI library. It demonstrates storing the abilities for each user in the mongoDB users collection and loading them when a user logs in into the app.
 
 #### Test users
 Within the ContentComponent.jsx the content is then rendered based on the abilities of each user. There are three test users defined:
@@ -15,12 +15,15 @@ Within the ContentComponent.jsx the content is then rendered based on the abilit
     *  /imports/ui/layouts/AppContainer.jsx
     *  /imports/ui/layouts/App.jsx
         *  constructor :: Setting up the initial state
-        *  getDerivedStateFromProps :: Handling the change of the logged in user and their abilities
+        *  componentDidUpdate :: Handling the change of the abilities of logged in user
         *  render() :: Wrapping the app content into a <AbilityContext.Provider/> component
-    *  /imports/ui/components/ContentComponent.jsx :: Rendering the content based on the users abilities
+        
+4) To usage of the CASL </Can> tag can is shown in the following components
+    *  /imports/ui/components/SimpleComponent.jsx
+    *  /imports/ui/components/MenuComponent.jsx
 
-#### Open issue
-There is one issue left in the showcase documented in the [casl/react issue tracker](https://github.com/stalniy/casl/issues/174#issuecomment-480197119). Please find the corresponding code artifacts marked with FIXME comments within ConentContainer.jsx.
+#### Open issues
+Ant-Design obviously has a problem rendering custom components inside of several structured compoents (e.g. Menu/SubMenu, Select.Option, Collapse, Tabs, etc). Please see https://github.com/ant-design/ant-design/issues/4853. I used a workaround to render submenus that are surrounded by a CASL <Can/> tag to check user permissions within MenuComponent.jsx. However I did not yet figure out how to render Icons in the SubMenu title correctly with this approaach. Currently icons are not rendered in the titles.
 
 #### To run the showcase
 1) Checkout the git branch
