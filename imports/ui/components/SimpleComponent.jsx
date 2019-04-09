@@ -5,8 +5,6 @@ import '../../ui/styles/components/SimpleComponent.less';
 import React, { Component } from 'react';
 import { Layout } from 'antd/lib/index';
 import { Can } from '../../casl/AbilityContext';
-// import { AbilityContext } from '../../casl/AbilityContext';
-// import { createContextualCan } from '@casl/react';
 
 class SimpleComponent extends Component {
   constructor(props) {
@@ -14,9 +12,6 @@ class SimpleComponent extends Component {
   }
 
   render() {
-    // FIXME: Using Can constant defined in AbilityContext.js needs a second call to render() (e.g. browser refresh) to update with the correct abilities. Could this be an issue with BrowserHistory?
-    // FIXME: Works with first call to render() when using the locally defined Can constant (e.g. commented line below)
-    // const Can = createContextualCan(AbilityContext.Consumer);
     return (
       <Layout className="casl-content-layout">
         <Layout.Content className="casl-content-main-area">
