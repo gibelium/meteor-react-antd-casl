@@ -30,7 +30,6 @@ mdg:validation-error
 universe:i18n
 
 # accounts
-accounts-password@1.5.1
 
 # less
 less
@@ -41,3 +40,4 @@ ddp-rate-limiter@1.0.7
 
 # security
 audit-argument-checks@1.0.7
+accounts-password
